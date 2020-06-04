@@ -243,11 +243,11 @@ SIGNAL ram_out_16bit		: STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 SIGNAL activa_imagen 	: STD_LOGIC;
 
 
---Se�ales para que la imagen se vea grande--
+--Señales para que la imagen se vea grande--
 signal contador_pixeles : STD_LOGIC_VECTOR(1 downto 0) := (others => '0');
 signal contador_lineas 	: STD_LOGIC_VECTOR(9 downto 0) := (others => '0');
 	
---se�ales para probar el write de memoria
+--señales para probar el write de memoria
 --signal contador_tiempo	: integer range 0 to 26000000 := 0;
 --signal clk_mem_b			: std_logic := '0';
 SIGNAL ADDR_b 				: STD_LOGIC_VECTOR(12 downto 0) := (others => '0');
@@ -485,7 +485,7 @@ DO_ram_blue		<= ram_out_16bit(4 downto 1);
 
 
 
---Conexiones de se�ales VGA  !!! SI NO SE USA METERLO EN EL PORT MAP!!!
+--Conexiones de señales VGA  !!! SI NO SE USA METERLO EN EL PORT MAP!!!
 v_sync <=  vertical_sinc;
 h_sync <=  horizontal_sinc;
 led_1 <=  led_debug;
@@ -616,6 +616,10 @@ begin
 
 
 end process;	
+
+
+
+-- Acá empieza el proceso para detectar el borde (detección de borde, edge detection) 
 
 process(ADDR_b)
 
